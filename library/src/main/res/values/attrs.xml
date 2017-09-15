@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="cc_icon_color" format="reference" />
+    <attr name="cc_count_color" format="reference" />
 </resources>
