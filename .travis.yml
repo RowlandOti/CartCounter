@@ -1,0 +1,47 @@
+language: android
+notifications:
+  email:
+    recipients:
+    - rowlandotienoo@gmail.com
+    on_success: always
+    on_failure: always
+env:
+  global:
+  - secure: a0ntodqya0a8584T2gTX06eLFGwxo/cBQ2lMowzHB5ELa9VwcvBrIROUDrLWwJu9HPk3EDHQDKnGPTkP9Cb7p3QjHY3oL0zvEJCfjGTszUQVEQBuVfK3uxKMeQhWzWexoOcCaHpbcBvQYRUBNwDBy+IrW6FOT6lFqS+7/eZiT9RvO59nxJxZ3q/HypIiYfQnoYl6dGEZeMpBrxJHQg2U+ZBSRf/yFFSrHQXRi5y/wK8zjrWpDjXVOYtzPv0DOdhCRVVx5M8LIWhq6LsZkWvdpAVJ4gCPEMM98rLQex32N+ZGp9gN9rymWJkdjuzKm3I72DOj059ALzSUuM5ySC4eYe/cHyTexfuQNb5JOMmCOZqccql6Id0s1xODC0sSL9IKxfXcQBNqvAA3/UUEu3bH+VB76m18Gkfv2XPfcHXMTiv6XyCiRPR3WdTvYAeCUkn4/YPKBXTovHr/xCqHIlRpor0CYj0f6ETa7fmf3UyK3KAj8ogK9G0vDgFJAWkFQ5OyDue+Yk2Prfv2U+pfkVFk+7hWWuVnHYBqDEwqdIGBpKUWxLLQOZuez3hUBLa/sDqZLBFWFyV/s026OfE+OXB+e/pNIxOKAwGuVCY9CuFSnGFnwZTi9pxFnI+mr4k91kc9fh9WHUGUqSEl5sXxDZ5iNozoIZbCSWdQDcRXC/qLLmU=
+  - secure: T4Grbm3hASYRIUogx2eo+aNbMA3cK2eL0qhNpQKLlVwtm2C4kOVsr5J6FAWKgtLIRIaTGfL6cJqWDrnxv/MuLbuYGCXSmHBualN1xkktKVlzM23EkucChJeJ1AKLULyYSCTZet8rg9aHo5qvoDa4dw5hnZsyBijljqIzncO18tNL/+QucIjfQbR7GKUjb8J5LyR/nAj2afp0xshjsem6LnMgwUej/YhrAATi71pCbUXVflk6C65hcQmLR/TNZ9ZxTvJkTtQyVp2+3EWkoUFo/rD/uljLzy9NKKijeHqjjIwHzoi74NBoL02p5r5LoDdBsujF965HivB/p1kHT10eaxA6OoPw/TzxvwimD5tfmCvqKNiKX0zb965Z57G2XsgR4jv9duecCnOaa8NfIYt8f0pzGfTd652t2bnoeGktuW4DbNW/CBTIuJiRGqgHmjIF9ga5pNWXaFdqefeZa3yAw/KTz7/DgFSCaDTUPMXzSss1SbwMf8Nf8t+ddxpTrjT38C5h4zCgLa350a73Wc5o7qC4hxs+3EDs2b00NC6yORaayjS7DcBROLXK4IAqr/bgEkV5XAjea7RsKzg80ZkO1eYoK+fM+A4yNFZnRSy0uZIcYcwQWebIwLmqRKHa3Za4aFUzIswCDpKerl5pSs9CfkUHBRZ8PtsYzXRyMMgMbqk=
+
+jdk:
+- oraclejdk8
+android:
+  components:
+  - tools
+  - extra-android-support
+  - extra-google-google_play_services
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - build-tools-25.0.2
+  - android-25
+deploy:
+  provider: releases
+  # The api-key is encrypted like described here: http://docs.travis-ci.com/user/encryption-keys/  (only travis can decrypt the key)
+  api_key:
+    secure: pGCEve1sTbuVDFw5YLunvYedDs6CPUnNaQPfE4n/ihj14xOD1LeA+9QF4BXWHVNlDLSC39auUrG6qiCsOBwN/M+jK4TFT1FuyjkHokrMayo/nEmDGwcQ3k23L33wY27p6JizkGPH2T9Lw9KyLVSjk4FC3CRMXQIH/HPgJW+VKKCz8S7DDv6JaefMGTXdXoeeI0F/feMCirgtRRHlI53uq03Cwt6gskw8y0pbUrE8lSG3qXsBodVcO/ZbgFFJo9VhZvKsklYx6Azk/hCVWrePpIqcHC3TOSmDob0i2QcZLXHjWGYiisuiPVQqbjPxIucW6+GSdD3Adhb6Lras1TH2jn/GV2/NiOvq3FT1byNbaI2jxqK7TTCscdPyVr10R1QhvIk72Y7QvaH1Kb6T84W0w5b9cE6wDtw00mzjBwRMNSn27pvFXV3BVxWsSN5cG15GZAlKzBnb0JQyVqo++pEUZyWCgtDzYuCUPy9NiIBnWhuoDwriDcAHX5n5W/rudcrfsAdJIJQZO7Lcq+SsV8a8esE6UCuVSpI+Bp/lPmjwLdmjaXFFiIUwLHWGF8Z5MYqnpJdLBTVoGjlo/fvgk4ONXS+82Eb9VRDtRamGpHq3Z16X5n2qRpPI2BRbLKMDL8HosRjkgQKmBlV0ocyTM+IB6xkZuzxMIUFC9/ZEGvOD1lU=
+  # Which file(s) to upload
+  file: sample/build/outputs/apk/debug/sample-debug.apk
+  # do not delete the files we're trying to upload
+  skip_cleanup: true
+  # only deploy if
+  on:
+    # we are on this repo
+    repo: RowlandOti/SlidingTabStripLayout
+    # and we are building a tag
+    tags: true
+before_install:
+- export JAVA7_HOME=/usr/lib/jvm/java-7-oracle
+- export JAVA8_HOME=/usr/lib/jvm/java-8-oracle
+- export JAVA_HOME=$JAVA8_HOME
+- chmod +x gradlew
+script:
+- "./gradlew clean build --stacktrace"
+after_deploy:
+- "./gradlew bintrayUpload -PbintrayUser=$BINTRAYUSER -PbintrayKey=$BINTRAYKEY -PdryRun=false --stacktrace"

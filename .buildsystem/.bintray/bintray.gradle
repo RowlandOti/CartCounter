@@ -1,0 +1,14 @@
+publish {
+    def propFile = file('../.buildsystem/.bintray/bintray.properties')
+    if (propFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propFile))
+
+        userOrg = props['BINTRAY_ORGANISATION']
+        groupId = props['BINTRAY_GROUPID']
+        artifactId = props['BINTRAY_ARTIFACTID']
+        publishVersion = getVersionName()
+        desc = props['BINTRAY_DESC']
+        website = props['BINTRAY_URL']
+    }
+}

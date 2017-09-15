@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_addcart"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        android:title="Add Cart"
+        app:actionLayout="@layout/menu_cartcount"
+        app:showAsAction="always"></item>
+
+</menu>

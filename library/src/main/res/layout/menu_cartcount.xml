@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.rowland.cartcounter.view.CartCounterActionView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/counterPanelContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <ImageView
+        android:id="@+id/counterImageView"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/counterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/counterImageView"
+        android:layout_alignTop="@+id/counterImageView"
+        android:layout_marginRight="-6dp"
+        android:layout_marginTop="-3dp"
+        android:background="@drawable/menu_addcart_count_rounded_square"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:minWidth="22dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="2dp"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        tools:ignore="SpUsage,RtlHardcoded" />
+</com.rowland.cartcounter.view.CartCounterActionView>
+
