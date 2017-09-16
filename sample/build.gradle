@@ -19,6 +19,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                // Force all of the primary support libraries to use the same version.
+                if (details.requested.group == 'com.android.support' && !details.requested.name.contains('multidex') ) {
+                    details.useVersion project.ANDROID_SUPPORT_LIB_VERSION
+                }
+            }
+        }
+    }
 }
 
 dependencies {
