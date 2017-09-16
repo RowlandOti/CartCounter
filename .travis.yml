@@ -19,13 +19,13 @@ android:
   - extra-google-google_play_services
   - extra-android-m2repository
   - extra-google-m2repository
-  - build-tools-25.0.2
-  - android-25
+  - build-tools-26.0.1
+  - android-26
 deploy:
   provider: releases
   # The api-key is encrypted like described here: http://docs.travis-ci.com/user/encryption-keys/  (only travis can decrypt the key)
   api_key:
-    secure: pGCEve1sTbuVDFw5YLunvYedDs6CPUnNaQPfE4n/ihj14xOD1LeA+9QF4BXWHVNlDLSC39auUrG6qiCsOBwN/M+jK4TFT1FuyjkHokrMayo/nEmDGwcQ3k23L33wY27p6JizkGPH2T9Lw9KyLVSjk4FC3CRMXQIH/HPgJW+VKKCz8S7DDv6JaefMGTXdXoeeI0F/feMCirgtRRHlI53uq03Cwt6gskw8y0pbUrE8lSG3qXsBodVcO/ZbgFFJo9VhZvKsklYx6Azk/hCVWrePpIqcHC3TOSmDob0i2QcZLXHjWGYiisuiPVQqbjPxIucW6+GSdD3Adhb6Lras1TH2jn/GV2/NiOvq3FT1byNbaI2jxqK7TTCscdPyVr10R1QhvIk72Y7QvaH1Kb6T84W0w5b9cE6wDtw00mzjBwRMNSn27pvFXV3BVxWsSN5cG15GZAlKzBnb0JQyVqo++pEUZyWCgtDzYuCUPy9NiIBnWhuoDwriDcAHX5n5W/rudcrfsAdJIJQZO7Lcq+SsV8a8esE6UCuVSpI+Bp/lPmjwLdmjaXFFiIUwLHWGF8Z5MYqnpJdLBTVoGjlo/fvgk4ONXS+82Eb9VRDtRamGpHq3Z16X5n2qRpPI2BRbLKMDL8HosRjkgQKmBlV0ocyTM+IB6xkZuzxMIUFC9/ZEGvOD1lU=
+    secure: jfIhIrZ7WS5J80pCMkDqUx8u1RptLBWdz2pWCawRRLDISISUKmHHGEplPuZR7oJ1tlsDJkXVSH7oVlX9wx50yNVB/B8s4iwJO/PO7sRoXQ5nQXIqX/WIqe5lmzcU+ExLw0vhe9MCnQ/G087SG1RascV05k+N1AFokPgb22pL1nkc1S/gc2SWZx6iLWMvdTy9/i+uEMNaLwwTRZBiLopkRr++uz7mOZGG3Py38ENx/UAzJ8M+BPWMfXJLEnxTc9wN5NC1TfqcEbpwX1zMwonMVZs1zOdzznrLdoPC/NgVRVbe+Q61w6zilwiqTowE0R54yi2fOHUOnM4UbHBtx+SOj0b2mnZtae+WMXG4sbfetB6hEmtvt5GvLpEEI7FX0bFPGywEFIa7u/kDoNA/pBcU0Kw7Igb/G4zOR6rCaEgxIhdH3pue5TTCd9axjYfe0InFZAmRkpm1SJLEnn+gMrLYDEu56cgReNpbbxP8K2/sW6D+3AYtwlPUoZ6zABja5bYEz6McwZuDpH8s9x40NrK403sOnUa81qJ2TVLIAR38oO4ljVBtmviPmsnol2tkk0sWAL4a3NPB765SA08S4v7DPnWLujNy0zMXlH4LaN/D9pLdvwJFFL4WNnlA63KC8p6dLQLnB2vxuZ7VcbMAsFWL/wyCYI5d9q8+Lf3UBSHQa6g=
   # Which file(s) to upload
   file: sample/build/outputs/apk/debug/sample-debug.apk
   # do not delete the files we're trying to upload
@@ -33,7 +33,7 @@ deploy:
   # only deploy if
   on:
     # we are on this repo
-    repo: RowlandOti/SlidingTabStripLayout
+    repo: RowlandOti/CartCounter
     # and we are building a tag
     tags: true
 before_install:
