@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="cc_count_color" format="reference" />
+    <declare-styleable name="CartCounterLayout">
+        <!-- Reference to a style for the CartCounterActionView -->
+        <attr name="cc_is_animate_layout" format="boolean" />
+        <attr name="cc_tv_background_color" format="color" />
+        <attr name="cc_tv_text_color" format="color" />
+        <attr name="cc_layout_animation" format="reference" />
+    </declare-styleable>
 </resources>

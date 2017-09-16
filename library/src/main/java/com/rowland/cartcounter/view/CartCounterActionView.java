@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -33,6 +34,12 @@ public class CartCounterActionView extends RelativeLayout {
     private static final String ACTION_SET_STEP = CartCounterActionView.class.getCanonicalName() + ".ACTION_SET_STEP";
     private static final String EXTRA_COUNT = "extraCount";
 
+    // Styleable attributes
+    private final boolean isAnimateLayout;
+    private final int layoutAnimationId;
+    private final int textViewBackgroundColor;
+    private final int textViewTextColor;
+
     private ImageView mIcon;
     private TextView mText;
 
@@ -60,6 +67,15 @@ public class CartCounterActionView extends RelativeLayout {
 
     public CartCounterActionView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CartCounterLayout, defStyle, 0);
+        try {
+            isAnimateLayout = a.getBoolean(R.styleable.CartCounterLayout_cc_is_animate_layout, true);
+            layoutAnimationId = a.getResourceId(R.styleable.CartCounterLayout_cc_layout_animation, R.anim.bounce);
+            textViewBackgroundColor = a.getColor(R.styleable.CartCounterLayout_cc_tv_background_color, R.attr.colorAccent);
+            textViewTextColor = a.getColor(R.styleable.CartCounterLayout_cc_tv_text_color, getResources().getColor(android.R.color.white));
+        } finally {
+            a.recycle();
+        }
     }
 
     @Override
@@ -67,7 +83,10 @@ public class CartCounterActionView extends RelativeLayout {
         super.onFinishInflate();
         mIcon = (ImageView) findViewById(R.id.counterImageView);
         mText = (TextView) findViewById(R.id.counterTextView);
+
         mText.setVisibility(View.GONE);
+        mText.setTextColor(textViewTextColor);
+        mText.setBackgroundColor(textViewBackgroundColor);
     }
 
     public void setItemData(Menu menu, MenuItem itemData) {
@@ -88,7 +107,9 @@ public class CartCounterActionView extends RelativeLayout {
         mCount = count;
         mText.setText(mCount > 99 ? "99+" : String.valueOf(mCount));
         mText.setVisibility((mCount == 0) ? View.GONE : View.VISIBLE);
-        animateBadge();
+        if (isAnimateLayout) {
+            animateBadge();
+        }
     }
 
     public void setCountStep(int step) {
@@ -108,8 +129,8 @@ public class CartCounterActionView extends RelativeLayout {
     }
 
     private void animateBadge() {
-        Animation bounce = AnimationUtils.loadAnimation(mIcon.getContext(), R.anim.bounce);
-        mIcon.startAnimation(bounce);
+        Animation bounce = AnimationUtils.loadAnimation(mIcon.getContext(), layoutAnimationId);
+        this.startAnimation(bounce);
     }
 
     @Override
