@@ -76,6 +76,4 @@ If you would like to override the background color of the count `TextView`, you 
 
 Preview: 
 
-![Alt text](https://github.com/RowlandOti/CartCounter/blob/master/documentation/illustration/preview.gif?raw=true "CartCounter Preview")        ![Alt text](https://github.com/RowlandOti/CartCounter/blob/master/documentation/png/stl2.png?raw=true "CartCounter Preview")
-
-
+![Alt text](https://github.com/RowlandOti/CartCounter/blob/master/documentation/illustration/preview.gif?raw=true "CartCounter Preview")        
