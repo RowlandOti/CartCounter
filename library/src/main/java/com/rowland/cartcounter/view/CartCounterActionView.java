@@ -24,7 +24,7 @@ import android.widget.Toast;
 import com.rowland.cartcounter.R;
 
 /**
- * Adapted int library by Rowland on 9/15/2017.*
+ * Adapted into library by Rowland on 9/15/2017.*
  * Add Cart Counter View for the respective menu icon
  * https://github.com/slightfoot/android-notification-action-view
  */
