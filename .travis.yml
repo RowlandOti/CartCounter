@@ -25,7 +25,7 @@ deploy:
   provider: releases
   # The api-key is encrypted like described here: http://docs.travis-ci.com/user/encryption-keys/  (only travis can decrypt the key)
   api_key:
-    secure: jfIhIrZ7WS5J80pCMkDqUx8u1RptLBWdz2pWCawRRLDISISUKmHHGEplPuZR7oJ1tlsDJkXVSH7oVlX9wx50yNVB/B8s4iwJO/PO7sRoXQ5nQXIqX/WIqe5lmzcU+ExLw0vhe9MCnQ/G087SG1RascV05k+N1AFokPgb22pL1nkc1S/gc2SWZx6iLWMvdTy9/i+uEMNaLwwTRZBiLopkRr++uz7mOZGG3Py38ENx/UAzJ8M+BPWMfXJLEnxTc9wN5NC1TfqcEbpwX1zMwonMVZs1zOdzznrLdoPC/NgVRVbe+Q61w6zilwiqTowE0R54yi2fOHUOnM4UbHBtx+SOj0b2mnZtae+WMXG4sbfetB6hEmtvt5GvLpEEI7FX0bFPGywEFIa7u/kDoNA/pBcU0Kw7Igb/G4zOR6rCaEgxIhdH3pue5TTCd9axjYfe0InFZAmRkpm1SJLEnn+gMrLYDEu56cgReNpbbxP8K2/sW6D+3AYtwlPUoZ6zABja5bYEz6McwZuDpH8s9x40NrK403sOnUa81qJ2TVLIAR38oO4ljVBtmviPmsnol2tkk0sWAL4a3NPB765SA08S4v7DPnWLujNy0zMXlH4LaN/D9pLdvwJFFL4WNnlA63KC8p6dLQLnB2vxuZ7VcbMAsFWL/wyCYI5d9q8+Lf3UBSHQa6g=
+    secure: N3g6uou0MlMpvP+oH1yF5+12G0uJgspmHU41+BHQR2/cUSKMRCw+vEjh8PJpQjWb7Jme+s+IZhUsDsmpT60FNL0cLeelsDn+R1t6XS1uIo6kK23R0p9FrKtth+IGUwAKnNNCkYnSB1TUglqjSbdCNL3PZRgfBwfB36QCu7VS3Uxyhy9o6j0PB3ImiCUsarYT1CYlxzdTkMNvxQSbcS6ze3gGeBtZ5JiZ7tOX8F+lYFQ9024/k/lyog8WH4wBa/rbpelDi0aOv3wEFjot0PT5KlEV4el6wYuFxzaADa8UGuKet45dIu1Bi4k8YjXylDmbPdPqRpUoy5YH/LpKUKsYac/pgB/trqSW9YqgIJ8xTdiGbewc/eiy3rNQxvn8TQL1lr7VSrPYIa2TVMuXxgTiVQ2glYbXs5IqH5rPpIu+vPLYCCBBMZ+5gHk+2b66iVmM2FpcgCo5SzNrsyJ39gwLuTI8RQ+CGMKyYV9XByzEcOQ3AaJBp1JcmS+MuplpaR1ZYlzg0+pGVmhAeJ0kBXv+9TMcyc9x0rKP6YrCNkU6Kh/iYtGlAuPHmJf77NPUuS2Sq/eZmZj5PoQfKG6Zpk6lUUHfQIviKtyTLce5/5/rjqxie7oOhOV0UUtSk3+aA/hmyhd7zAX9Yn33fPCn5ZvMf60cFPq2OFXQaznt/X3LVaE=
   # Which file(s) to upload
   file: sample/build/outputs/apk/debug/sample-debug.apk
   # do not delete the files we're trying to upload
