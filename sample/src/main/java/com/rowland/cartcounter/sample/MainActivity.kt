@@ -1,4 +1,4 @@
-package com.rowland.cartcounter
+package com.rowland.cartcounter.sample
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

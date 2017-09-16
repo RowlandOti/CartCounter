@@ -1,4 +1,4 @@
-package com.rowland.cartcounter
+package com.rowland.cartcounter.sample
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

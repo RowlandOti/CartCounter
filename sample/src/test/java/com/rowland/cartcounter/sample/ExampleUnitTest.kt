@@ -1,4 +1,4 @@
-package com.rowland.cartcounter
+package com.rowland.cartcounter.sample
 
 import org.junit.Test
 
