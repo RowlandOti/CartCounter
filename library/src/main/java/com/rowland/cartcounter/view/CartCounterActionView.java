@@ -30,7 +30,6 @@ import com.rowland.cartcounter.R;
  */
 public class CartCounterActionView extends RelativeLayout {
 
-    private static final String ACTION_SET_ABS = CartCounterActionView.class.getCanonicalName() + ".ACTION_SET_ABS";
     private static final String ACTION_SET_STEP = CartCounterActionView.class.getCanonicalName() + ".ACTION_SET_STEP";
     private static final String EXTRA_COUNT = "extraCount";
 
@@ -45,9 +44,7 @@ public class CartCounterActionView extends RelativeLayout {
         @Override
         public void onReceive(Context context, Intent intent) {
             int count = intent.getIntExtra(EXTRA_COUNT, 0);
-            if (intent.getAction().equals(ACTION_SET_ABS)) {
-                setCount(count);
-            } else if (intent.getAction().equals(ACTION_SET_STEP)) {
+            if (intent.getAction().equals(ACTION_SET_STEP)) {
                 setCountStep(count);
             }
         }
@@ -119,7 +116,6 @@ public class CartCounterActionView extends RelativeLayout {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         IntentFilter filter = new IntentFilter();
-        filter.addAction(ACTION_SET_ABS);
         filter.addAction(ACTION_SET_STEP);
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mUpdateReceiver, filter);
     }
