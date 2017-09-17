@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CartCounter Library</string>
+    <string name="countericon">CounterIcon</string>
+    <string name="countertextview">CounterTextView</string>
 </resources>
