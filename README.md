@@ -11,7 +11,7 @@ Grab the latest version via Maven:
 ```xml
 <dependency>
   <groupId>com.rowland.cartcounter</groupId>
-  <artifactId>cartCounter</artifactId>
+  <artifactId>CartCounter</artifactId>
   <version>1.0.0-beta-1</version>
   <type>pom</type>
 </dependency>
