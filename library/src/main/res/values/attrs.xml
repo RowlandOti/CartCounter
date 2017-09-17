@@ -3,6 +3,7 @@
     <declare-styleable name="CartCounterLayout">
         <!-- Reference to a style for the CartCounterActionView -->
         <attr name="cc_is_animate_layout" format="boolean" />
+        <attr name="cc_tv_background_drawable" format="reference" />
         <attr name="cc_tv_background_color" format="color" />
         <attr name="cc_tv_text_color" format="color" />
         <attr name="cc_layout_animation" format="reference" />
