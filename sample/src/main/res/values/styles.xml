@@ -9,8 +9,8 @@
 
         <!-- Customize your theme here. -->
         <item name="cc_tv_background_color">@color/colorAccent</item>
-        <item name="cc_is_animate_layout">false</item>
-        <item name="cc_tv_background_drawable">@drawable/menu_addcart_count_rounded_square</item>
+        <item name="cc_is_animate_layout">true</item>
+        <item name="cc_tv_background_drawable">@drawable/menu_addcart_count_oval</item>
         <item name="cc_tv_text_color">@android:color/white</item>
         <item name="cc_layout_animation">@anim/bounce</item>
     </style>
