@@ -1,5 +1,5 @@
 ### Status
-[![Build Status](https://travis-ci.org/RowlandOti/CartCounter.svg?branch=master)](https://travis-ci.org/RowlandOti/CartCounter)[ ![Download](https://api.bintray.com/packages/rowlandoti/maven/CartCounter/images/download.svg) ](https://bintray.com/rowlandoti/maven/CartCounter/_latestVersion)
+[![Build Status](https://travis-ci.org/RowlandOti/CartCounter.svg?branch=master)](https://travis-ci.org/RowlandOti/CartCounter)[ ![Download](https://api.bintray.com/packages/rowlandoti/maven/CartCounter/images/download.svg) ](https://bintray.com/rowlandoti/maven/CartCounter/_latestVersion)[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 # CartCounter
 Add a cart icon with item counter to the Toolbar. You can increment the counter based on the number of unique items the user has in the shopping cart. In addition, you can animate the icon when there is an increment or decrement.
