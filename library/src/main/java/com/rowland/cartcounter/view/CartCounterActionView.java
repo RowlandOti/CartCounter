@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.content.LocalBroadcastManager;
@@ -37,8 +38,10 @@ public class CartCounterActionView extends RelativeLayout {
     // Styleable attributes
     private final boolean isAnimateLayout;
     private final int layoutAnimationId;
-    private final int textViewBackgroundColor;
     private final int textViewTextColor;
+    private final int textViewBackgroundDrawableId;
+
+    private BroadcastReceiver mUpdateReceiver;
 
     private ImageView mIcon;
     private TextView mText;
@@ -46,16 +49,6 @@ public class CartCounterActionView extends RelativeLayout {
     private Menu mMenu;
     private MenuItem mItemData;
     private int mCount;
-
-    private BroadcastReceiver mUpdateReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            int count = intent.getIntExtra(EXTRA_COUNT, 0);
-            if (intent.getAction().equals(ACTION_SET_STEP)) {
-                setCountStep(count);
-            }
-        }
-    };
 
     public CartCounterActionView(Context context) {
         this(context, null);
@@ -65,13 +58,13 @@ public class CartCounterActionView extends RelativeLayout {
         this(context, attrs, android.R.attr.actionButtonStyle);
     }
 
-    public CartCounterActionView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CartCounterLayout, defStyle, 0);
+    public CartCounterActionView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CartCounterLayout, defStyleAttr, R.style.CartCounterViewTheme);
         try {
             isAnimateLayout = a.getBoolean(R.styleable.CartCounterLayout_cc_is_animate_layout, true);
             layoutAnimationId = a.getResourceId(R.styleable.CartCounterLayout_cc_layout_animation, R.anim.bounce);
-            textViewBackgroundColor = a.getColor(R.styleable.CartCounterLayout_cc_tv_background_color, R.attr.colorAccent);
+            textViewBackgroundDrawableId = a.getResourceId(R.styleable.CartCounterLayout_cc_tv_background_drawable, R.drawable.menu_addcart_count_rounded_square);
             textViewTextColor = a.getColor(R.styleable.CartCounterLayout_cc_tv_text_color, getResources().getColor(android.R.color.white));
         } finally {
             a.recycle();
@@ -86,7 +79,7 @@ public class CartCounterActionView extends RelativeLayout {
 
         mText.setVisibility(View.GONE);
         mText.setTextColor(textViewTextColor);
-        mText.setBackgroundColor(textViewBackgroundColor);
+        mText.setBackgroundResource(textViewBackgroundDrawableId);
     }
 
     public void setItemData(Menu menu, MenuItem itemData) {
@@ -136,6 +129,7 @@ public class CartCounterActionView extends RelativeLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+        mUpdateReceiver = new CountReciever();
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_SET_STEP);
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mUpdateReceiver, filter);
@@ -145,6 +139,7 @@ public class CartCounterActionView extends RelativeLayout {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mUpdateReceiver);
+        mUpdateReceiver = null;
     }
 
     @Override
@@ -229,6 +224,17 @@ public class CartCounterActionView extends RelativeLayout {
                 return new SavedState[size];
             }
         };
+    }
+
+    private class CountReciever extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int count = intent.getIntExtra(EXTRA_COUNT, 0);
+            if (intent.getAction().equals(ACTION_SET_STEP)) {
+                CartCounterActionView.this.setCountStep(count);
+            }
+        }
     }
 }
 
