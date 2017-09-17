@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.rowland.cartcounter:cartcounter:1.0.0-beta-1'
+  compile 'com.rowland.cartcounter:CartCounter:1.0.0-beta-1'
 }
 ```
 
