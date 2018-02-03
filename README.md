@@ -70,7 +70,7 @@ If you would like to override the background color of the count `TextView`, you 
     <item name="colorAccent">@color/colorAccent</item>
 
     <item name="cc_tv_text_color">@color/colorAccent</item>
-    <item name="cc_layout_animation">true</item>
+    <item name="cc_is_animate_layout">true</item>
 </style>
 ```
 
