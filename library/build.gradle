@@ -22,14 +22,12 @@ android {
     }
 }
 
-ext.supportLibVersion = project.ANDROID_SUPPORT_LIB_VERSION
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    implementation "com.android.support:appcompat-v7:$supportLibVersion"
+    implementation "com.android.support:appcompat-v7:$project.ANDROID_SUPPORT_LIB_VERSION"
     testImplementation 'junit:junit:4.12'
 }
