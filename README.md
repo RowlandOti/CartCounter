@@ -60,7 +60,7 @@ override fun onPrepareOptionsMenu(menu: Menu): Boolean {
 }
 ```
 
-If you would like to override the background color of the count `TextView`, you can do so in your styles include the `cc_count_color` attribute. For example:
+If you would like to override the background color of the count `TextView`, you can do so in your styles include the `cc_tv_background_color` attribute. For example:
 ```xml
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -69,7 +69,7 @@ If you would like to override the background color of the count `TextView`, you 
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
 
-    <item name="cc_tv_text_color">@color/colorAccent</item>
+    <item name="cc_tv_background_color">@color/colorAccent</item>
     <item name="cc_is_animate_layout">true</item>
 </style>
 ```
